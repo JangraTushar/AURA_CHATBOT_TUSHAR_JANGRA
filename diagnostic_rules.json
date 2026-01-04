@@ -1,0 +1,339 @@
+{
+  "diagnostic_rules": {
+    "lettuce": {
+      "optimal_ranges": {
+        "temperature": {"min": 18, "max": 22, "unit": "°C", "ideal": 20},
+        "humidity": {"min": 60, "max": 75, "unit": "%", "ideal": 65},
+        "ec": {"min": 1.2, "max": 1.6, "unit": "mS/cm", "ideal": 1.4},
+        "ph": {"min": 5.5, "max": 6.5, "unit": "", "ideal": 6.0},
+        "ppfd": {"min": 200, "max": 300, "unit": "µmol/m²/s", "ideal": 250},
+        "waterTemp": {"min": 18, "max": 22, "unit": "°C", "ideal": 20},
+        "co2": {"min": 400, "max": 1200, "unit": "ppm", "ideal": 800}
+      },
+      "issues": {
+        "slow_growth": {
+          "description": "Growth rate below expected for growth stage",
+          "diagnostic_checks": [
+            {
+              "parameter": "temperature",
+              "condition": "below_min",
+              "threshold": 18,
+              "severity": "high",
+              "cause": "Low Temperature Stress",
+              "explanation": "At temperatures below 18°C, lettuce metabolism slows by 40-60%. Photosynthesis, nutrient uptake, and cell division all decrease significantly.",
+              "impact": "Growth rate reduced by {{percentage}}% based on temperature deviation",
+              "calculation": "Each 1°C below 18°C reduces growth by approximately 10-15%",
+              "action": "Increase ambient temperature to 18-22°C range. Check heater operation, verify thermostat settings, ensure proper insulation.",
+              "recovery_time": "2-3 days after temperature correction"
+            },
+            {
+              "parameter": "temperature",
+              "condition": "above_max",
+              "threshold": 22,
+              "severity": "medium",
+              "cause": "Heat Stress",
+              "explanation": "Above 22°C, lettuce experiences reduced nutrient uptake as stomata close to prevent water loss. Growth becomes elongated and quality decreases.",
+              "impact": "Growth quality compromised, potential for bitter taste and bolting",
+              "action": "Reduce temperature through improved ventilation, AC adjustment, or reduced light intensity. Check cooling system operation.",
+              "recovery_time": "Immediate stress relief, 5-7 days for quality recovery"
+            },
+            {
+              "parameter": "ec",
+              "condition": "below_min",
+              "threshold": 1.2,
+              "severity": "high",
+              "cause": "Nutrient Deficiency (Low EC)",
+              "explanation": "EC below 1.2 mS/cm indicates insufficient nutrient concentration. Plants cannot uptake adequate nitrogen, phosphorus, and other essential elements.",
+              "impact": "{{percentage}}% below optimal EC. Expect 15-25% growth rate reduction and potential nutrient deficiency symptoms.",
+              "calculation": "Each 0.1 mS/cm below optimal reduces growth by approximately 8-10%",
+              "action": "Increase nutrient solution concentration by adding balanced fertilizer. Target EC of 1.4 mS/cm. Verify fertilizer mixing ratios (A+B parts).",
+              "recovery_time": "3-5 days to see visible improvement in growth rate"
+            },
+            {
+              "parameter": "ec",
+              "condition": "above_max",
+              "threshold": 1.6,
+              "severity": "medium",
+              "cause": "Nutrient Concentration Too High",
+              "explanation": "EC above 1.6 mS/cm can cause osmotic stress, making it difficult for roots to uptake water. Can lead to tip burn and stunted growth.",
+              "impact": "Osmotic stress, potential for salt buildup and root damage",
+              "action": "Dilute nutrient solution with fresh water to bring EC to 1.2-1.4 range. Gradually reduce over 6-12 hours to avoid shock.",
+              "recovery_time": "2-4 days after correction"
+            },
+            {
+              "parameter": "ppfd",
+              "condition": "below_min",
+              "threshold": 200,
+              "severity": "high",
+              "cause": "Insufficient Light",
+              "explanation": "PPFD below 200 µmol/m²/s limits photosynthesis. Plants cannot produce enough energy for optimal growth, leading to elongated, pale leaves.",
+              "impact": "{{percentage}}% below optimal. Growth rate reduced by 30-50%, poor leaf quality",
+              "calculation": "Each 50 µmol/m²/s below optimal reduces growth by approximately 15-20%",
+              "action": "Increase light intensity by: lowering light fixtures, increasing light power/dimming settings, replacing aging/failed LED drivers, or extending photoperiod (if less than 16 hours).",
+              "recovery_time": "7-14 days to see significant improvement"
+            },
+            {
+              "parameter": "ph",
+              "condition": "outside_range",
+              "threshold": {"min": 5.5, "max": 6.5},
+              "severity": "medium",
+              "cause": "pH Imbalance - Nutrient Lockout",
+              "explanation": "pH outside 5.5-6.5 range causes nutrient lockout. Iron, manganese unavailable above pH 7.0. Phosphorus unavailable below pH 5.0.",
+              "impact": "Nutrient uptake reduced even with adequate EC. Visible deficiency symptoms likely.",
+              "action": "Adjust pH gradually to 6.0 using pH up/down solutions. Make small adjustments (0.2 per adjustment), wait 15 minutes, retest.",
+              "recovery_time": "2-4 days after pH correction"
+            },
+            {
+              "parameter": "waterTemp",
+              "condition": "outside_range",
+              "threshold": {"min": 18, "max": 22},
+              "severity": "medium",
+              "cause": "Sub-optimal Water Temperature",
+              "explanation": "Water temperature affects dissolved oxygen levels and root metabolism. Cold water (<18°C) slows growth, warm water (>22°C) reduces oxygen and increases disease risk.",
+              "impact": "Root function compromised, increased disease susceptibility if too warm",
+              "action": "Maintain water temperature in 18-22°C range. Use water heater/chiller if needed, ensure good aeration.",
+              "recovery_time": "2-3 days after correction"
+            }
+          ]
+        },
+        "yellowing": {
+          "description": "Chlorosis - leaves turning yellow",
+          "diagnostic_checks": [
+            {
+              "parameter": "ec",
+              "condition": "below_min",
+              "threshold": 1.0,
+              "severity": "high",
+              "cause": "Nitrogen Deficiency (Primary)",
+              "explanation": "EC below 1.0 mS/cm typically indicates nitrogen deficiency, the most common cause of yellowing. Nitrogen is mobile, so deficiency shows on older, lower leaves first.",
+              "impact": "Yellowing progressing from lower to upper leaves. Growth significantly reduced.",
+              "action": "Increase EC to 1.4 mS/cm immediately using balanced fertilizer. Verify nitrogen content in fertilizer mix. Check for proper A+B ratio mixing.",
+              "recovery_time": "3-5 days - new growth should be green, old yellow leaves won't recover",
+              "identifying_features": "Lower leaves yellow first, uniform yellowing across leaf"
+            },
+            {
+              "parameter": "ph",
+              "condition": "above_max",
+              "threshold": 6.5,
+              "severity": "medium",
+              "cause": "Iron Deficiency (pH-induced)",
+              "explanation": "pH above 6.5 makes iron unavailable even if present in solution. Iron is immobile, so deficiency shows on younger, newer leaves first.",
+              "impact": "Interveinal chlorosis on new growth - veins stay green while tissue between turns yellow.",
+              "action": "Reduce pH to 6.0 range using pH down (phosphoric acid). Consider chelated iron supplement if pH already correct.",
+              "recovery_time": "2-4 days to see green return to new growth",
+              "identifying_features": "Young leaves yellow with green veins (interveinal chlorosis)"
+            },
+            {
+              "parameter": "temperature",
+              "condition": "below_min",
+              "threshold": 15,
+              "severity": "medium",
+              "cause": "Cold-Induced Nutrient Uptake Failure",
+              "explanation": "Very low temperatures (<15°C) reduce root function and nutrient uptake capacity even with adequate nutrients present.",
+              "impact": "General yellowing despite adequate EC, slow growth",
+              "action": "Increase temperature to 18-22°C range immediately. Once temperature corrects, nutrient uptake will resume.",
+              "recovery_time": "2-3 days after temperature correction",
+              "identifying_features": "General yellowing, stunted appearance, EC may be adequate"
+            }
+          ]
+        },
+        "tipburn": {
+          "description": "Brown, necrotic edges on inner/young leaves",
+          "diagnostic_checks": [
+            {
+              "parameter": "humidity",
+              "condition": "above_max",
+              "threshold": 75,
+              "severity": "high",
+              "cause": "High Humidity - Reduced Transpiration",
+              "explanation": "Humidity above 75% reduces transpiration, limiting calcium transport to new growth. Calcium deficiency occurs locally even with adequate calcium in solution.",
+              "impact": "Tip burn on inner leaves, quality downgrade, potential crop loss if severe",
+              "action": "Reduce humidity to 60-70% using dehumidifier and improved air circulation. Increase fan speed. Once present, tip burn damage is permanent.",
+              "recovery_time": "Immediate action prevents progression, existing damage permanent",
+              "identifying_features": "Brown edges on youngest, inner leaves"
+            },
+            {
+              "parameter": "ec",
+              "condition": "above_max",
+              "threshold": 1.8,
+              "severity": "medium",
+              "cause": "High EC - Calcium Transport Issues",
+              "explanation": "Very high EC can cause osmotic stress and disrupt calcium transport, even with adequate calcium present.",
+              "impact": "Tip burn, stunted growth, salt stress",
+              "action": "Reduce EC to 1.2-1.4 range by diluting with fresh water. Reduce gradually over 6-12 hours.",
+              "recovery_time": "Prevention only - existing damage permanent",
+              "identifying_features": "Tip burn with high EC readings"
+            },
+            {
+              "parameter": "airflow",
+              "condition": "insufficient",
+              "threshold": 0.3,
+              "unit": "m/s",
+              "severity": "medium",
+              "cause": "Poor Air Circulation",
+              "explanation": "Stagnant air around leaves creates high humidity microclimate and reduces transpiration locally, preventing calcium transport.",
+              "impact": "Tip burn concentrated in areas with poor airflow",
+              "action": "Add fans or increase fan speed to achieve 0.3-0.5 m/s airflow at canopy level. Ensure air movement throughout growing area.",
+              "recovery_time": "Prevention only",
+              "identifying_features": "Tip burn in specific zones with poor air circulation"
+            }
+          ]
+        },
+        "elongation": {
+          "description": "Stretched, leggy growth with thin stems",
+          "diagnostic_checks": [
+            {
+              "parameter": "ppfd",
+              "condition": "below_min",
+              "threshold": 200,
+              "severity": "high",
+              "cause": "Insufficient Light (Etiolation)",
+              "explanation": "Low light causes plants to stretch seeking more light. Stems elongate, leaves are pale and thin, overall structure weak.",
+              "impact": "Poor quality, thin leaves, weak structure, unmarketable product",
+              "action": "Increase PPFD to 200-300 range immediately. Lower lights, increase intensity, or replace failing fixtures. Cannot reverse existing elongation.",
+              "recovery_time": "New growth improves in 5-7 days, elongated stems permanent",
+              "identifying_features": "Long internodes, pale color, thin stems"
+            },
+            {
+              "parameter": "temperature",
+              "condition": "above_max",
+              "threshold": 24,
+              "severity": "medium",
+              "cause": "Heat-Induced Stretching",
+              "explanation": "High temperatures promote rapid, elongated growth rather than compact, quality growth.",
+              "impact": "Leggy plants, reduced quality, bitter taste",
+              "action": "Reduce temperature to 18-22°C through improved cooling. May need to reduce light intensity to help with heat load.",
+              "recovery_time": "New growth more compact in 5-7 days",
+              "identifying_features": "Elongation with higher temperatures"
+            }
+          ]
+        }
+      }
+    },
+    "pak_choi": {
+      "optimal_ranges": {
+        "temperature": {"min": 15, "max": 20, "unit": "°C", "ideal": 17},
+        "humidity": {"min": 60, "max": 75, "unit": "%", "ideal": 65},
+        "ec": {"min": 1.5, "max": 2.0, "unit": "mS/cm", "ideal": 1.7},
+        "ph": {"min": 6.0, "max": 7.0, "unit": "", "ideal": 6.5},
+        "ppfd": {"min": 250, "max": 350, "unit": "µmol/m²/s", "ideal": 300},
+        "waterTemp": {"min": 18, "max": 22, "unit": "°C", "ideal": 20}
+      },
+      "issues": {
+        "slow_growth": {
+          "description": "Growth rate below expected",
+          "diagnostic_checks": [
+            {
+              "parameter": "temperature",
+              "condition": "above_max",
+              "threshold": 20,
+              "severity": "high",
+              "cause": "Heat Stress (Pak Choi Specific)",
+              "explanation": "Pak choi prefers cooler temperatures than lettuce. Above 20°C, it experiences stress, bolting risk increases significantly.",
+              "impact": "Slow growth, risk of premature bolting (flowering), bitter taste",
+              "action": "Reduce temperature to 15-20°C range. Pak choi requires cooler conditions than most greens.",
+              "recovery_time": "Immediate temperature reduction needed to prevent bolting"
+            },
+            {
+              "parameter": "ec",
+              "condition": "below_min",
+              "threshold": 1.5,
+              "severity": "high",
+              "cause": "Insufficient Nutrients (Pak Choi requires higher EC)",
+              "explanation": "Pak choi is a heavier feeder than lettuce, requiring EC of 1.5-2.0 mS/cm for optimal growth.",
+              "impact": "Slow growth, pale leaves, reduced yield",
+              "action": "Increase EC to 1.7-1.8 mS/cm. Use balanced fertilizer formulation.",
+              "recovery_time": "3-5 days after correction"
+            }
+          ]
+        }
+      }
+    },
+    "microgreens": {
+      "optimal_ranges": {
+        "temperature": {"min": 18, "max": 24, "unit": "°C", "ideal": 21},
+        "humidity": {"min": 70, "max": 85, "unit": "%", "ideal": 75},
+        "ppfd": {"min": 100, "max": 200, "unit": "µmol/m²/s", "ideal": 150}
+      },
+      "issues": {
+        "mold_growth": {
+          "description": "Fungal growth on seeds or soil",
+          "diagnostic_checks": [
+            {
+              "parameter": "humidity",
+              "condition": "above_max",
+              "threshold": 85,
+              "severity": "high",
+              "cause": "Excessive Humidity",
+              "explanation": "Very high humidity combined with poor airflow creates ideal conditions for mold growth.",
+              "impact": "Crop loss, food safety concerns",
+              "action": "Reduce humidity to 70-80% range, increase air circulation, remove humidity dome after germination.",
+              "recovery_time": "Prevention only - discard moldy trays"
+            }
+          ]
+        },
+        "damping_off": {
+          "description": "Seedlings falling over at soil line",
+          "diagnostic_checks": [
+            {
+              "parameter": "humidity",
+              "condition": "above_max",
+              "threshold": 85,
+              "severity": "high",
+              "cause": "Fungal Disease (Pythium/Rhizoctonia)",
+              "explanation": "Overwatering and high humidity promote damping off pathogens that attack seedling stems.",
+              "impact": "Significant crop loss",
+              "action": "Reduce watering frequency, improve air circulation, ensure proper drainage. Remove affected plants immediately.",
+              "recovery_time": "Affected plants cannot recover - focus on prevention"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "severity_levels": {
+    "critical": {
+      "description": "Immediate action required - crop at risk",
+      "color_code": "red",
+      "response_priority": 1
+    },
+    "high": {
+      "description": "Action required within 12-24 hours",
+      "color_code": "orange",
+      "response_priority": 2
+    },
+    "medium": {
+      "description": "Action required within 2-3 days",
+      "color_code": "yellow",
+      "response_priority": 3
+    },
+    "low": {
+      "description": "Monitor closely, may require action",
+      "color_code": "blue",
+      "response_priority": 4
+    }
+  },
+  "diagnosis_logic": {
+    "description": "How to apply diagnostic rules",
+    "steps": [
+      "1. Identify crop type (lettuce, pak_choi, microgreens)",
+      "2. Get optimal ranges for that crop",
+      "3. Identify the reported symptom/issue",
+      "4. For each diagnostic check in that issue:",
+      "5.   Compare sensor reading to threshold",
+      "6.   If condition is met, add to list of potential causes",
+      "7. Sort potential causes by severity (high → medium → low)",
+      "8. Return top 1-3 most likely causes with actions"
+    ],
+    "example_logic": {
+      "crop": "lettuce",
+      "symptom": "slow_growth",
+      "sensor_data": {"temperature": 16, "ec": 0.9, "ppfd": 230},
+      "found_issues": [
+        "temperature below 18 (severity: high)",
+        "ec below 1.2 (severity: high)"
+      ],
+      "diagnosis": "Primary causes: (1) Low temperature reducing metabolism, (2) Low EC causing nutrient deficiency. Both need immediate correction for recovery."
+    }
+  }
+}
