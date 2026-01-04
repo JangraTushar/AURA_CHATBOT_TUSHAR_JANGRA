@@ -1,0 +1,403 @@
+[
+  {
+    "id": "kb_001",
+    "category": "lettuce_growth_issues",
+    "question": "Why is my lettuce growing slowly?",
+    "answer": "Lettuce growth can slow due to several factors: 1) Temperature outside optimal range (18-22°C) - lettuce metabolism significantly reduces below 15°C or above 25°C. 2) Insufficient light (PPFD below 200 µmol/m²/s) limits photosynthesis. 3) Low EC (below 1.2 mS/cm) means insufficient nutrients for growth. 4) pH imbalance (outside 5.5-6.5 range) affects nutrient uptake. 5) Root zone issues like low oxygen or disease. 6) Plant spacing too dense causing competition.",
+    "tags": ["lettuce", "growth", "speed", "troubleshooting", "slow growth"],
+    "optimal_conditions": {
+      "temperature": "18-22°C",
+      "ec": "1.2-1.6 mS/cm",
+      "ph": "5.5-6.5",
+      "ppfd": "200-300 µmol/m²/s",
+      "humidity": "60-75%"
+    },
+    "related_sensor_checks": ["temperature", "ec", "ph", "ppfd"]
+  },
+  {
+    "id": "kb_002",
+    "category": "lettuce_yellowing",
+    "question": "What causes lettuce leaves to turn yellow?",
+    "answer": "Yellowing in lettuce (chlorosis) typically indicates: 1) Nitrogen deficiency - most common cause, usually from EC below 1.0 mS/cm. Lower leaves yellow first. 2) Iron deficiency - younger leaves yellow while veins stay green, often caused by high pH above 6.5. 3) Magnesium deficiency - yellowing between veins on older leaves. 4) Overwatering or root rot reducing nutrient uptake. 5) Light stress - too much light can cause bleaching. 6) Natural aging of lower leaves in mature plants.",
+    "tags": ["lettuce", "yellowing", "chlorosis", "nutrients", "deficiency"],
+    "optimal_conditions": {
+      "ec": "1.2-1.6 mS/cm",
+      "ph": "5.5-6.5"
+    },
+    "related_sensor_checks": ["ec", "ph"]
+  },
+  {
+    "id": "kb_003",
+    "category": "lettuce_tipburn",
+    "question": "What is tip burn in lettuce and how do I prevent it?",
+    "answer": "Tip burn is when leaf edges turn brown and crispy, caused by calcium deficiency in new growth. This happens even with adequate calcium in solution due to: 1) High humidity (>80%) reducing transpiration. 2) Inconsistent watering causing calcium transport issues. 3) Rapid growth phases. 4) High EC (>2.0 mS/cm). 5) Low airflow. Prevention: maintain humidity 60-70%, ensure consistent irrigation, use fans for air circulation, keep EC in optimal range, ensure adequate calcium in nutrient solution.",
+    "tags": ["lettuce", "tipburn", "calcium", "humidity", "quality"],
+    "optimal_conditions": {
+      "humidity": "60-70%",
+      "ec": "1.2-1.6 mS/cm",
+      "airflow": "0.3-0.5 m/s"
+    },
+    "related_sensor_checks": ["humidity", "ec", "temperature"]
+  },
+  {
+    "id": "kb_004",
+    "category": "temperature_management",
+    "question": "What happens if my grow room temperature gets too high?",
+    "answer": "High temperatures (>25°C for lettuce) cause multiple problems: 1) Reduced nutrient uptake - plants close stomata to prevent water loss. 2) Elongated growth - plants stretch becoming leggy. 3) Bitter taste in lettuce. 4) Increased risk of bolting (flowering). 5) Higher disease pressure. 6) Increased transpiration leading to tip burn. 7) Reduced shelf life. Immediate actions: increase ventilation, reduce light intensity temporarily, use evaporative cooling, check AC/cooling system operation.",
+    "tags": ["temperature", "heat", "stress", "lettuce", "climate"],
+    "optimal_conditions": {
+      "temperature": "18-22°C",
+      "max_temperature": "25°C"
+    },
+    "related_sensor_checks": ["temperature", "humidity"]
+  },
+  {
+    "id": "kb_005",
+    "category": "temperature_management",
+    "question": "What happens if temperature drops too low in my farm?",
+    "answer": "Low temperatures (<15°C for lettuce) significantly impact growth: 1) Metabolism slows by 40-60% below 15°C. 2) Nutrient uptake efficiency drops. 3) Growth nearly stops below 10°C. 4) Increased susceptibility to diseases. 5) Root function impaired. 6) Longer time to harvest. 7) Potential for cold damage/frost injury if near 0°C. Check heater operation, ensure proper insulation, seal air leaks, verify thermostat settings, consider thermal blankets for extreme cold.",
+    "tags": ["temperature", "cold", "frost", "heater", "climate"],
+    "optimal_conditions": {
+      "temperature": "18-22°C",
+      "min_temperature": "15°C"
+    },
+    "related_sensor_checks": ["temperature"]
+  },
+  {
+    "id": "kb_006",
+    "category": "ec_management",
+    "question": "What is EC and why does it matter?",
+    "answer": "EC (Electrical Conductivity) measures the concentration of dissolved nutrients in your solution, measured in mS/cm or µS/cm. It matters because: 1) Too low (<1.0) means insufficient nutrients causing slow growth and deficiencies. 2) Too high (>2.0) can cause nutrient burn, root damage, and osmotic stress. 3) Optimal range varies by crop and growth stage. 4) EC changes over time as plants take up water and nutrients at different rates. Monitor daily, adjust by adding water (to lower) or concentrated nutrient solution (to raise).",
+    "tags": ["ec", "nutrients", "concentration", "fundamentals"],
+    "optimal_conditions": {
+      "lettuce": "1.2-1.6 mS/cm",
+      "pak_choi": "1.5-2.0 mS/cm",
+      "tomato": "2.0-3.0 mS/cm"
+    },
+    "related_sensor_checks": ["ec"]
+  },
+  {
+    "id": "kb_007",
+    "category": "ph_management",
+    "question": "Why is pH important in hydroponics?",
+    "answer": "pH (5.5-6.5 optimal for most crops) controls nutrient availability. At wrong pH: 1) Nutrients become locked out even if present - iron unavailable above pH 7, phosphorus below pH 5. 2) pH below 5.0 can cause aluminum/manganese toxicity. 3) pH above 7.0 causes calcium, magnesium, iron deficiencies. 4) Most nutrients available in 5.5-6.5 range. 5) pH naturally drifts - monitor daily. Adjust with pH up (potassium hydroxide) or pH down (phosphoric acid). Add slowly, retest after 15 minutes.",
+    "tags": ["ph", "nutrients", "chemistry", "fundamentals"],
+    "optimal_conditions": {
+      "ph": "5.5-6.5",
+      "ideal_ph": "6.0"
+    },
+    "related_sensor_checks": ["ph"]
+  },
+  {
+    "id": "kb_008",
+    "category": "lighting",
+    "question": "What is PPFD and how much do I need?",
+    "answer": "PPFD (Photosynthetic Photon Flux Density) measures light intensity for plants in µmol/m²/s. Different crops need different levels: Lettuce: 200-300, Herbs: 200-400, Tomatoes: 400-600, Microgreens: 100-200. Too little: slow growth, elongation, pale color. Too much: bleaching, burning, heat stress, wasted electricity. Measure at canopy level, not at the light source. Adjust by changing light height or intensity. DLI (Daily Light Integral) = PPFD × hours × 0.0036. Lettuce needs 12-17 mol/m²/day DLI.",
+    "tags": ["light", "ppfd", "dli", "photosynthesis", "fundamentals"],
+    "optimal_conditions": {
+      "lettuce_ppfd": "200-300 µmol/m²/s",
+      "lettuce_dli": "12-17 mol/m²/day",
+      "photoperiod": "16-18 hours"
+    },
+    "related_sensor_checks": ["ppfd"]
+  },
+  {
+    "id": "kb_009",
+    "category": "pak_choi",
+    "question": "How do I grow pak choi (bok choy) in vertical farms?",
+    "answer": "Pak choi grows well in controlled environments with: 1) Temperature: 15-20°C (cooler than lettuce). 2) EC: 1.5-2.0 mS/cm (higher than lettuce). 3) pH: 6.0-7.0. 4) PPFD: 250-350 µmol/m²/s. 5) Growth time: 25-35 days from seed. 6) Spacing: 15-20cm between plants. Common issues: bolting if >25°C, tip burn if humidity >75%, slow growth if too warm. Harvest when 20-25cm tall before flower stalk appears.",
+    "tags": ["pak_choi", "bok_choy", "chinese_cabbage", "growing_guide"],
+    "optimal_conditions": {
+      "temperature": "15-20°C",
+      "ec": "1.5-2.0 mS/cm",
+      "ph": "6.0-7.0",
+      "ppfd": "250-350 µmol/m²/s",
+      "days_to_harvest": "25-35 days"
+    },
+    "related_sensor_checks": ["temperature", "ec", "ph", "ppfd"]
+  },
+  {
+    "id": "kb_010",
+    "category": "microgreens",
+    "question": "What are the basics of growing microgreens?",
+    "answer": "Microgreens are harvested at 7-21 days with first true leaves. Key requirements: 1) High seeding density (30-50g seeds per 10\"x20\" tray). 2) No nutrients needed initially (use seed energy). 3) Light only after germination (2-3 days in dark first). 4) PPFD: 100-200 µmol/m²/s. 5) Temperature: 18-24°C. 6) High humidity (70-80%) during germination. 7) Good airflow to prevent mold. Popular varieties: sunflower, pea shoots, radish, broccoli, kale. Harvest when 5-8cm tall. Short cycle = fast turnover = good profitability.",
+    "tags": ["microgreens", "fast_crop", "beginner", "profitable"],
+    "optimal_conditions": {
+      "temperature": "18-24°C",
+      "humidity": "70-80%",
+      "ppfd": "100-200 µmol/m²/s",
+      "days_to_harvest": "7-21 days"
+    },
+    "related_sensor_checks": ["temperature", "humidity"]
+  },
+  {
+    "id": "kb_011",
+    "category": "humidity_management",
+    "question": "What is the ideal humidity for indoor farms?",
+    "answer": "Optimal humidity varies by crop and growth stage: Lettuce: 60-75%, Microgreens: 70-80% (germination), 60-70% (growth), Fruiting crops: 50-70%. Problems with high humidity (>80%): tip burn, disease (powdery mildew, botrytis), poor transpiration. Problems with low humidity (<50%): increased water use, tip burn, stress, pest issues (spider mites love dry conditions). Control with: dehumidifiers, proper ventilation, air circulation, humidifiers if needed. Monitor with hygrometer at canopy level.",
+    "tags": ["humidity", "rh", "moisture", "climate", "vpd"],
+    "optimal_conditions": {
+      "lettuce_humidity": "60-75%",
+      "general_range": "60-70%"
+    },
+    "related_sensor_checks": ["humidity", "temperature"]
+  },
+  {
+    "id": "kb_012",
+    "category": "disease_prevention",
+    "question": "How do I prevent diseases in my vertical farm?",
+    "answer": "Disease prevention strategies: 1) Environmental control - keep humidity 60-70%, good airflow (0.3-0.5 m/s), avoid water on leaves. 2) Sanitation - clean between crops, disinfect tools, remove dead plant material immediately. 3) Water quality - filter water, prevent algae growth. 4) Plant spacing - adequate space for air circulation. 5) Monitoring - daily checks, catch early signs. 6) Quarantine new plants/seeds. Common diseases: Pythium (root rot) - brown slimy roots, Powdery mildew - white powder on leaves, Botrytis (gray mold) - gray fuzzy growth. Prevention easier than cure.",
+    "tags": ["disease", "prevention", "sanitation", "ipm", "health"],
+    "related_sensor_checks": ["humidity", "temperature"]
+  },
+  {
+    "id": "kb_013",
+    "category": "nutrient_solution",
+    "question": "What nutrients do plants need in hydroponics?",
+    "answer": "Plants need 16 essential elements: Macronutrients (large amounts): Nitrogen (N), Phosphorus (P), Potassium (K), Calcium (Ca), Magnesium (Mg), Sulfur (S). Secondary: Iron (Fe), Manganese (Mn), Boron (B), Zinc (Zn), Copper (Cu), Molybdenum (Mo), Chlorine (Cl), Nickel (Ni). Most commercial formulas use 2-part (A+B) or 3-part systems. Follow manufacturer instructions. Monitor EC to track total concentration. Common deficiencies: N = yellowing lower leaves, P = purple stems, K = brown leaf edges, Ca = tip burn, Fe = yellow young leaves with green veins.",
+    "tags": ["nutrients", "fertilizer", "npk", "macronutrients", "micronutrients"],
+    "optimal_conditions": {
+      "ec_range": "1.2-2.5 mS/cm depending on crop",
+      "ph_range": "5.5-6.5"
+    },
+    "related_sensor_checks": ["ec", "ph"]
+  },
+  {
+    "id": "kb_014",
+    "category": "water_quality",
+    "question": "Does water quality matter in hydroponics?",
+    "answer": "Water quality is critical: 1) Starting EC - municipal water may have EC 0.3-0.5 from dissolved minerals, factor this into nutrient calculations. 2) Chlorine/Chloramine - can harm beneficial bacteria, let water sit 24h or use filter. 3) Calcium/Magnesium - hard water (high Ca/Mg) may require adjusted nutrient formulas. 4) pH - some water sources have high/low pH requiring more adjustment. 5) Contaminants - test for heavy metals, sodium if using well water. 6) Temperature - cold water can shock roots. Ideal water: EC <0.3, pH 6.5-7.5 before nutrients, filtered for chlorine.",
+    "tags": ["water", "quality", "filtration", "source_water"],
+    "related_sensor_checks": ["ec", "ph", "temperature"]
+  },
+  {
+    "id": "kb_015",
+    "category": "setup_planning",
+    "question": "What equipment do I need to start a small vertical farm?",
+    "answer": "Basic equipment for 10-20 m² farm: 1) Growing System: NFT channels, DWC totes, or ZipGrow towers (₹30,000-₹80,000). 2) Lighting: LED grow lights 200-300W per 2m² (₹15,000-₹40,000 per fixture). 3) Climate Control: AC unit, heater, fans (₹50,000-₹1,50,000). 4) Monitoring: Temperature/humidity sensors, EC/pH meters (₹10,000-₹30,000). 5) Water: Reservoir tank, pump, irrigation system (₹20,000-₹50,000). 6) Nutrients: Initial stock (₹5,000-₹10,000). 7) Structure: Racks, shelving (₹40,000-₹1,00,000). Total: ₹1,70,000-₹4,60,000. Add 20% for misc supplies.",
+    "tags": ["setup", "equipment", "costs", "planning", "investment"],
+    "related_info": {
+      "total_cost_range": "₹1,70,000-₹4,60,000 for 10-20m²",
+      "monthly_operating": "₹15,000-₹40,000"
+    }
+  },
+  {
+    "id": "kb_016",
+    "category": "profitability",
+    "question": "Is vertical farming profitable in India?",
+    "answer": "Profitability depends on scale, location, and crop selection: Lettuce example (10m²): Revenue: 50kg/month × ₹120/kg = ₹6,000/m². Costs: Seeds (₹400), Nutrients (₹800), Electricity (₹2,000), Water (₹200), Labor (₹3,000) = ₹6,400 total. Monthly revenue: ₹60,000, Costs: ₹20,000-₹30,000, Profit: ₹30,000-₹40,000/month. ROI: 12-18 months. Higher margins with: microgreens (faster cycle), premium varieties (Lollo Bionda vs Iceberg), direct-to-consumer sales, restaurant contracts. Location matters - urban areas have higher prices and demand.",
+    "tags": ["profitability", "roi", "business", "revenue", "costs"],
+    "related_info": {
+      "lettuce_price": "₹80-₹150/kg depending on variety and market",
+      "microgreens_price": "₹600-₹1200/kg"
+    }
+  },
+  {
+    "id": "kb_017",
+    "category": "crop_selection",
+    "question": "What are the most profitable crops for vertical farming?",
+    "answer": "Top profitable crops ranked: 1) Microgreens (₹600-₹1200/kg, 7-14 day cycle) - highest profit per m² per month. 2) Premium lettuce (Lollo Bionda, Red Oak: ₹120-₹150/kg vs Iceberg ₹60/kg). 3) Herbs (Basil ₹400-₹600/kg, Mint ₹300/kg, Cilantro ₹200/kg). 4) Pak Choi (₹80-₹120/kg, growing demand). 5) Arugula (₹300-₹500/kg, niche market). Consider: cycle time, market demand, competition, storage/shelf life. Start with 2-3 varieties, test market, scale winners. Diversification reduces risk.",
+    "tags": ["crops", "profitability", "selection", "business", "planning"],
+    "related_info": {
+      "microgreens_margin": "Highest",
+      "lettuce_margin": "Medium-High",
+      "herbs_margin": "High but seasonal demand"
+    }
+  },
+  {
+    "id": "kb_018",
+    "category": "seed_selection",
+    "question": "What lettuce varieties are best for vertical farming?",
+    "answer": "Best lettuce varieties for indoor: 1) Lollo Bionda (₹150-₹180/kg) - frilly, green, heat tolerant, 30-35 days. 2) Lollo Rosso (₹150-₹180/kg) - red version, beautiful, same growing. 3) Red Oak Leaf (₹140-₹160/kg) - tender, good flavor, 28-32 days. 4) Green Oak Leaf (₹120-₹150/kg) - fast growing, reliable. 5) Romaine (₹100-₹130/kg) - higher weight, good shelf life, 35-40 days. 6) Butterhead (₹110-₹140/kg) - soft, buttery, premium. Avoid: Iceberg (low price ₹60-₹80/kg, doesn't justify energy costs). Choose pelleted seeds for easier planting.",
+    "tags": ["lettuce", "varieties", "seeds", "selection"],
+    "related_info": {
+      "premium_varieties": ["Lollo Bionda", "Lollo Rosso", "Red Oak"],
+      "avoid": ["Iceberg - low price point"]
+    }
+  },
+  {
+    "id": "kb_019",
+    "category": "harvesting",
+    "question": "When should I harvest lettuce for maximum quality?",
+    "answer": "Harvest timing affects quality and price: Optimal harvest: When heads are 80-90% of expected size, leaves firm and crisp, before any yellowing or flowering signs. Size matters: Lollo varieties: 150-200g head, Romaine: 250-350g, Oak leaf: 100-150g. Timing by days: 28-35 days for most varieties. Morning harvest is best: highest water content, crisp texture, better shelf life. Don't wait too long: quality drops, bitterness increases, shelf life decreases. Post-harvest: rinse in cold water, spin dry, refrigerate immediately at 2-4°C. Can store 7-10 days if harvested at right time.",
+    "tags": ["harvest", "timing", "quality", "lettuce", "post_harvest"],
+    "optimal_conditions": {
+      "harvest_time": "morning",
+      "storage_temp": "2-4°C",
+      "shelf_life": "7-10 days"
+    }
+  },
+  {
+    "id": "kb_020",
+    "category": "common_mistakes",
+    "question": "What are common beginner mistakes in vertical farming?",
+    "answer": "Top mistakes to avoid: 1) Overfeeding - high EC causes more problems than low EC. Start low, increase gradually. 2) Neglecting pH - checking EC but not pH leads to nutrient lockout. 3) Poor air circulation - causes disease, uneven growth. 4) Inconsistent monitoring - check daily, catch problems early. 5) Too many varieties - focus on 2-3 crops initially. 6) Ignoring water temperature - warm water (<15°C or >25°C) causes root issues. 7) Planting too dense - air circulation and light penetration suffer. 8) Not cleaning between crops - diseases carry over. 9) Inadequate lighting - saving on lights costs more in slow growth.",
+    "tags": ["mistakes", "beginner", "troubleshooting", "learning"],
+    "related_sensor_checks": ["ec", "ph", "temperature"]
+  },
+  {
+    "id": "kb_021",
+    "category": "algae_control",
+    "question": "How do I prevent algae in my hydroponic system?",
+    "answer": "Algae prevention strategies: 1) Block light from nutrient solution - algae needs light to grow. Use opaque containers, cover exposed water. 2) Keep solution cool (<22°C) - warm water promotes algae. 3) Proper sanitation - clean system between crops, remove dead plant matter. 4) UV sterilization - kills algae spores in recirculating systems. 5) H2O2 (hydrogen peroxide) - 3ml per 10L at water change, kills algae without harming plants. 6) Beneficial bacteria - compete with algae. Algae itself isn't harmful but: competes for nutrients, clogs systems, indicates sanitation issues. Green water is algae, brown slime is often bacteria (pythium).",
+    "tags": ["algae", "water_quality", "sanitation", "prevention"],
+    "related_sensor_checks": ["temperature"]
+  },
+  {
+    "id": "kb_022",
+    "category": "co2_supplementation",
+    "question": "Do I need CO2 supplementation in vertical farms?",
+    "answer": "CO2 supplementation benefits: Ambient CO2: ~400ppm. Supplemented: 800-1200ppm. Benefits: 20-30% faster growth, higher yields, better quality. When beneficial: Sealed growing environment, high light levels (>400 PPFD), optimal temperature and nutrients. Not beneficial: If other factors are limiting (low light, wrong temp), poor ventilation (dangerous CO2 buildup). Cost: CO2 tank + regulator (₹20,000-₹40,000), refills (₹500-₹1000/month). ROI: Makes sense for commercial operations >50m² with optimized environment. Start without CO2, add when other parameters perfect.",
+    "tags": ["co2", "carbon_dioxide", "advanced", "yields"],
+    "optimal_conditions": {
+      "ambient_co2": "400ppm",
+      "supplemented_co2": "800-1200ppm"
+    },
+    "related_sensor_checks": ["co2"]
+  },
+  {
+    "id": "kb_023",
+    "category": "root_health",
+    "question": "What do healthy roots look like in hydroponics?",
+    "answer": "Healthy root indicators: Color: White to cream colored. Texture: Firm, not slimy or mushy. Smell: Fresh, earthy smell (not rotten/sulfur). Growth: Active white root tips. Length: Appropriate for plant size. Unhealthy signs: Brown/black roots = root rot (pythium), Slimy texture = bacterial infection, Rotten smell = anaerobic conditions, Stunted roots = high EC, pH problems, or low oxygen. Root health depends on: Dissolved oxygen (>5mg/L), Appropriate temperature (18-22°C), Clean water, Proper EC/pH. Prevention: maintain water temperature, ensure oxygenation, avoid light exposure to roots.",
+    "tags": ["roots", "health", "diagnosis", "hydroponics"],
+    "optimal_conditions": {
+      "root_zone_temp": "18-22°C",
+      "dissolved_oxygen": ">5mg/L"
+    },
+    "related_sensor_checks": ["temperature"]
+  },
+  {
+    "id": "kb_024",
+    "category": "germination",
+    "question": "How do I improve seed germination rates?",
+    "answer": "Factors affecting germination: 1) Temperature: Most seeds germinate best at 20-25°C. Lettuce can germinate cooler (15-20°C). 2) Moisture: Keep medium consistently moist, not waterlogged. 3) Oxygen: Don't oversaturate - roots need air. 4) Light: Some seeds need light (lettuce), some need dark (tomato). Check seed packet. 5) Seed quality: Use fresh seeds, properly stored. 6) Medium: Rockwool, coco coir, or peat pellets work well. Pre-soak rockwool to pH 5.5. Tips: Soak seeds 4-8 hours before planting, Maintain humidity dome until sprouted, Don't bury too deep (2-3x seed diameter), Expected rates: 80-95% for quality seeds.",
+    "tags": ["germination", "seeds", "propagation", "seedlings"],
+    "optimal_conditions": {
+      "temperature": "20-25°C",
+      "humidity": "80-90%",
+      "days_to_germinate": "2-7 days for lettuce"
+    }
+  },
+  {
+    "id": "kb_025",
+    "category": "transplanting",
+    "question": "When should I transplant seedlings to the main system?",
+    "answer": "Transplant timing: Lettuce: 10-14 days after germination, when 2-4 true leaves developed, roots visible through medium. Microgreens: No transplant, harvest in place. Herbs: 14-21 days, 3-4 true leaves. Transplant best practices: 1) Transplant in evening or low light to reduce stress. 2) Handle by leaves, not stem. 3) Plant at same depth, don't bury stem. 4) Lower EC/pH initially (EC 0.8-1.0 for first week). 5) Monitor closely for wilting. 6) Ensure good root contact with nutrient solution. Signs ready to transplant: Healthy green color, roots emerging from medium, 2+ true leaves, standing upright.",
+    "tags": ["transplant", "seedlings", "timing", "propagation"],
+    "optimal_conditions": {
+      "transplant_ec": "0.8-1.0 mS/cm initially",
+      "time_of_day": "evening or cloudy day"
+    }
+  },
+  {
+    "id": "kb_026",
+    "category": "electricity_costs",
+    "question": "How much electricity does a vertical farm use?",
+    "answer": "Electricity breakdown for 10m² farm: Lights: 2000W × 16h/day × 30 days = 960 kWh/month (₹4,800 at ₹5/kWh). Cooling/Heating: 1000W × 8h/day × 30 days = 240 kWh/month (₹1,200). Fans/Pumps: 200W × 24h/day × 30 days = 144 kWh/month (₹720). Dehumidifier: 300W × 12h/day × 30 days = 108 kWh/month (₹540). Total: ~1452 kWh/month = ₹7,260 for 10m². Per m²: ₹726/month electricity. Cost varies with: LED efficiency (newer LEDs use 30-40% less), Climate (AC needs higher in summer), Insulation quality. Electricity is 25-35% of operating costs.",
+    "tags": ["electricity", "costs", "operating_expenses", "energy"],
+    "related_info": {
+      "electricity_per_sqm": "₹700-₹900/month",
+      "percentage_of_costs": "25-35%"
+    }
+  },
+  {
+    "id": "kb_027",
+    "category": "lighting_schedule",
+    "question": "What photoperiod should I use for lettuce?",
+    "answer": "Lettuce photoperiod options: 16 hours on / 8 hours off: Most common, good balance of growth and electricity cost. 18 hours on / 6 hours off: Slightly faster growth, higher electricity. 14 hours on / 10 hours off: More energy efficient, slightly slower growth. 24 hours continuous: NOT recommended - plants need dark period for optimal growth, higher electricity cost, no significant benefit. DLI (Daily Light Integral) matters more than duration: 16h × 250 PPFD = 14.4 DLI (good), 18h × 220 PPFD = 14.3 DLI (same result). Optimize: Calculate your DLI, adjust PPFD and hours for target, consider time-of-day electricity rates.",
+    "tags": ["photoperiod", "lighting", "schedule", "dli"],
+    "optimal_conditions": {
+      "recommended_photoperiod": "16h light / 8h dark",
+      "target_dli": "12-17 mol/m²/day"
+    }
+  },
+  {
+    "id": "kb_028",
+    "category": "system_types",
+    "question": "What hydroponic system is best for beginners?",
+    "answer": "System comparison for beginners: 1) NFT (Nutrient Film Technique): Pros: Water efficient, good oxygenation, easy harvest. Cons: Pump failure = quick death, requires slope, not for heavy plants. Best for: Lettuce, herbs. 2) DWC (Deep Water Culture): Pros: Simple, forgiving, low maintenance. Cons: Temperature control critical, oxygenation needed. Best for: Lettuce, beginners. 3) Kratky (Passive DWC): Pros: No electricity, ultra-simple. Cons: Single harvest, not recirculating. Best for: Learning, microgreens. 4) Ebb & Flow: Pros: Versatile, supports many crops. Cons: Complex, more points of failure. Recommendation for beginners: Start with DWC or simple NFT.",
+    "tags": ["systems", "hydroponics", "nft", "dwc", "beginner"],
+    "related_info": {
+      "easiest": "DWC or Kratky",
+      "most_commercial": "NFT"
+    }
+  },
+  {
+    "id": "kb_029",
+    "category": "vertical_spacing",
+    "question": "What is the optimal plant spacing for vertical farming?",
+    "answer": "Spacing by crop type: Lettuce (head): 20cm × 20cm (25 plants/m²), Lettuce (baby leaf): 10cm × 10cm (100 plants/m²), Microgreens: Dense seeding (no individual spacing), Pak Choi: 15cm × 15cm (44 plants/m²), Herbs (basil): 15cm × 15cm (44 plants/m²), Arugula: 8cm × 8cm (156 plants/m²). Vertical tier spacing: 40-50cm between shelves for lettuce/greens, 60-80cm for taller herbs, 30cm for microgreens. Too close: Poor air circulation, disease risk, uneven light, competition. Too far: Wasted space, lower yield per m². Optimize by testing and tracking yield per m².",
+    "tags": ["spacing", "density", "layout", "planning"],
+    "related_info": {
+      "lettuce_density": "25 plants/m²",
+      "vertical_spacing": "40-50cm between tiers"
+    }
+  },
+  {
+    "id": "kb_030",
+    "category": "seasonal_considerations",
+    "question": "Does vertical farming work year-round in India?",
+    "answer": "Vertical farming advantages in India: Year-round production: Controlled environment eliminates seasonal limitations. Summer challenges (Apr-Jun): High ambient temps increase cooling costs (30-50% more), harder to maintain 18-22°C, higher humidity control needs. Solutions: Better insulation, shade cloth on building, night-time growing. Monsoon benefits (Jul-Sep): Lower cooling needs, but higher humidity to control, power outages risk. Winter benefits (Nov-Feb): Lower/no cooling costs, easier temperature control, may need heating in North India. Best margins: October-March (lower electricity). Worst margins: May-August (high cooling costs). Indoor farming excels in extreme climates where outdoor is impossible.",
+    "tags": ["seasonal", "year_round", "climate", "india"],
+    "related_info": {
+      "best_months": "October-March",
+      "challenging_months": "April-August"
+    }
+  },
+  {
+    "id": "kb_031",
+    "category": "water_management",
+    "question": "How much water does vertical farming use compared to traditional farming?",
+    "answer": "Water efficiency comparison: Traditional field farming: 200-250 liters/kg of lettuce. Greenhouse: 50-80 liters/kg. Vertical farm (recirculating): 10-20 liters/kg. Water savings: 90-95% vs field farming. For 10m² farm producing 50kg lettuce/month: Water usage: 500-1000 liters/month total, Actual consumption: 200-400 liters (rest recirculates), Cost: ₹40-₹80/month (municipal water). Water management: Daily top-up: 5-10% of system volume, Complete change: Every 2-4 weeks, Filter and treat for reuse, Monitor EC rise (indicates water evaporation). Biggest sustainability advantage of vertical farming.",
+    "tags": ["water", "sustainability", "efficiency", "conservation"],
+    "related_info": {
+      "water_savings": "90-95% vs traditional",
+      "liters_per_kg": "10-20 liters/kg lettuce"
+    }
+  },
+  {
+    "id": "kb_032",
+    "category": "pest_management",
+    "question": "Do I need to worry about pests in indoor vertical farms?",
+    "answer": "Indoor pest challenges: Less than outdoor BUT not zero. Common pests: Aphids, Fungus gnats, Thrips, Spider mites, Whiteflies. How they enter: On people/clothing, Through ventilation, On new plants/seeds, Already in growing medium. Prevention (IPM): 1) Sanitation - clean between crops, remove debris. 2) Positive pressure - filtered air intake. 3) Sticky traps - monitor and catch. 4) Quarantine - inspect new materials. 5) Physical barriers - screens on vents. Treatment if needed: Biological controls (ladybugs, parasitic wasps), Organic sprays (neem oil, insecticidal soap), As last resort: targeted pesticides (check organic certification if applicable). Most indoor farms have minimal pest pressure vs outdoor.",
+    "tags": ["pests", "ipm", "prevention", "indoor"],
+    "related_info": {
+      "prevention_better_than": "treatment",
+      "most_common": "fungus gnats, aphids"
+    }
+  },
+  {
+    "id": "kb_033",
+    "category": "food_safety",
+    "question": "What food safety considerations are there for vertical farms?",
+    "answer": "Food safety best practices: 1) Water quality: Test source water, filter appropriately, monitor microbial levels. 2) Hygiene: Hand washing stations, clean tools/surfaces, limit access to growing areas. 3) No contamination: No animals in farm, clean footwear policy, sanitize between crops. 4) Post-harvest: Cold chain maintenance (2-4°C), clean washing water, food-grade packaging. 5) Traceability: Batch tracking, harvest dates, growing records. 6) Testing: Periodic testing for E.coli, Salmonella if required by buyers. Advantages of indoor: No soil pathogens, no animal intrusion, no pesticide drift, controlled water source. Certifications: FSSAI license (required in India), GAP (Good Agricultural Practices), Organic certification (if applicable).",
+    "tags": ["food_safety", "hygiene", "certification", "quality"],
+    "related_info": {
+      "required_license": "FSSAI in India",
+      "optional_certification": "GAP, Organic"
+    }
+  },
+  {
+    "id": "kb_034",
+    "category": "market_sales",
+    "question": "How do I sell my vertical farm produce in India?",
+    "answer": "Sales channels ranked by margin: 1) Direct to Consumer (B2C): Highest margin (₹150-₹200/kg lettuce), Farm visits/pick-up, Local delivery, Online orders (Instagram, WhatsApp). 2) Restaurants/Hotels (B2B): Good margin (₹120-₹150/kg), Consistent orders, Payment terms (30-45 days), Need FSSAI license. 3) Organic stores/Cafes: Medium margin (₹100-₹130/kg), Brand building, Smaller volumes. 4) Wholesale markets: Lowest margin (₹60-₹90/kg), High volume needed, Less control. Best strategy: Mix of channels. Start with: 5-10 restaurant clients (80% of volume), Direct sales for premium (20% of volume), builds brand. Tips: Beautiful packaging, freshness guarantee (harvest same morning), consistent quality and supply, build relationships.",
+    "tags": ["sales", "marketing", "business", "channels"],
+    "related_info": {
+      "highest_margin": "Direct to consumer",
+      "most_stable": "Restaurant contracts"
+    }
+  },
+  {
+    "id": "kb_035",
+    "category": "scaling",
+    "question": "How do I scale from a small farm to commercial production?",
+    "answer": "Scaling pathway: Phase 1 (Test): 10-20m², 2-3 crops, 1-2 restaurant clients, Learn systems, Validate market. Phase 2 (Proof): 50-100m², 4-5 reliable crops, 10-15 regular clients, Profitability proven, Systemize operations. Phase 3 (Scale): 200-500m², Automated climate control, Hired labor, 30+ clients, Consider multiple locations. Key scaling factors: 1) Automation: Manual → Semi-automated → Fully automated. 2) Systems: Document everything, Create SOPs (Standard Operating Procedures), Training materials. 3) Quality control: Consistent processes, Monitoring systems. 4) Market: Secure demand BEFORE scaling, Build brand. Don't scale too fast - 2x growth per year is sustainable.",
+    "tags": ["scaling", "growth", "business", "expansion"],
+    "related_info": {
+      "recommended_growth": "2x per year",
+      "secure_demand_first": "before expanding"
+    }
+  }
+]
