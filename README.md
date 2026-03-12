@@ -1,10 +1,46 @@
-Hello this is a AURA_CHATBOT\n
-To run this project first of all you must ensure that the dependencies are downloaded properly taht are mentioned in the requirements.txt file and after that you will be ready to run this project 
-As per description i use GROQ LLM as the base llm which is used to get the answer of queries using the knowledge base (which is converted in vector database) as a augmented corpus to help the chatboat to answer accurately as per the latest data available for the project. Basically i use the groq because it is fast and give free API to use and accurate up to some extent.
-i use chroma database to store the vectore of database locally. It is a opensource tool and i used it many  time so i use to convert the knowledge base into vector so that the model can get the related conext according to the question and send them to model for the final output
-I created a simple chatbot using the RAG technology for the farming field basically it helps the farmer to know why the particular problem happend with the crops and what are the solution to these problems. It will also take reading from the sensor of the field to accurately detecct the acctual raeson for the problem.
-RAG is a technology in which instead of finetuning the model again and again we simplly send the querry along with the fresh data related to that query so that model can predict the solution using the training data and the augmented data that is send along with the query 
-As the data is dynamic in nature, it will grow exponentially everyday we generates lots of data, and it will be very difficult to fine the model again and again with the newely generated data. SO to bypass this problem we use RAG to increase the accuracy of models 
-In RAG we use a base model (simply say a good LLM) which is trained on sparse dataset, and connected a knowledge base which store the knowledge in the form of vectors 
-the user send the query, before the query going to the llm the RAG searches related context to the query in the vector databse and send it along with the query to the model. The model then on the behalf of its training data and the augmented data generates the output and send the output to the user
-Test queries are same as mentioned in the assignment pdf  (i) why is my lettuce growing slowly? (ii) with connected to sensor (farm_102) why is my lettuce yellowing? (iii) without connecting with sensor --> why is my lettuce yellowing? (iv) with connecting the sensor --> why is my lettuce growing slowly?
+## RAG-AURA Agronomy Chatbot
+An intelligent, production-ready AI chatbot that provides natural and context-aware conversations using modern NLP and LLM techniques.​
+
+AURA is designed as an end‑to‑end system: from clean data and modular backend services to an easy‑to‑use chat interface, making it a great showcase project for real‑world AI engineering.
+
+## Table of content
+* Overview
+
+* Features
+
+* Architecture
+
+* Tech Stack
+
+## Overview
+AURA is a custom chatbot built to demonstrate how to integrate large language models, prompt engineering, and a clean software architecture into a single project.
+​
+The goal is to go beyond a simple API call and show an interview‑ready implementation: modular code, environment‑based configuration, logging, error handling, and extensibility for new features.
+## Features
+* Natural, multi‑turn conversation with maintained context.
+* Pluggable LLM backend (e.g., Gemini/OpenAI/other providers via a single abstraction layer).
+* Clear separation between UI, API, and model logic for easier maintenance and scaling.
+* Config‑driven setup using environment variables for keys and secrets.
+* Robust error handling and logging for debugging and production readiness.
+* Easy to extend with custom tools (e.g., web search, document QA, domain knowledge base)
+## Architecture
+At a high level, AURA follows a three‑layer architecture:
+* UI Layer – chat interface (web/CLI/app) that interacts with users.
+* API Layer – backend endpoints for chat, conversation management, and health checks.
+* AI Layer – model abstraction, prompt construction, and response post‑processing.
+
+Data flows from the user → UI → API → LLM provider → back through post‑processing → UI, with conversation context stored and reused to maintain coherent dialogue.
+## Tech Stack
+* Language:  Python
+
+* Backend:  FastAPI / Flask
+
+* Frontend: HTML+CSS
+
+* LLM Provider: Groq
+
+* State/Storage: In‑memory
+
+* Environment & Tools: Conda/venv, Git,
+
+These technologies are commonly used for modern chatbot systems and align with industry practices.
