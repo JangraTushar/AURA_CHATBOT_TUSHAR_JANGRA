@@ -1,4 +1,4 @@
-Hello this is a AURA_CHATBOT
+Hello this is a AURA_CHATBOT\n
 To run this project first of all you must ensure that the dependencies are downloaded properly taht are mentioned in the requirements.txt file and after that you will be ready to run this project 
 As per description i use GROQ LLM as the base llm which is used to get the answer of queries using the knowledge base (which is converted in vector database) as a augmented corpus to help the chatboat to answer accurately as per the latest data available for the project. Basically i use the groq because it is fast and give free API to use and accurate up to some extent.
 i use chroma database to store the vectore of database locally. It is a opensource tool and i used it many  time so i use to convert the knowledge base into vector so that the model can get the related conext according to the question and send them to model for the final output
